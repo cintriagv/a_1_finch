@@ -4,9 +4,9 @@ JAVASCRIPT ATTEMPT:
 
 DEPENDENCIES:
 
-node.js
-express.js
-npm fetch
+node.js: https://nodejs.org/
+express.js: https://expressjs.com/
+node-fetch: https://www.npmjs.com/package/node-fetch
 
 HOW TO RUN:
 

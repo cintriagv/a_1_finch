@@ -21,7 +21,8 @@ app.post('/begin', (req, res) => {
   res.setHeader ('Content-Type', 'application/json');
   res.json({
     redirect:
-    'https://connect.tryfinch.com/authorize?&client_id=f010187a-625c-474a-b9c5-461445989809&products=directory individual employment payment pay_statement&redirect_uri=https://example.com&sandbox=true'
+    'https://connect.tryfinch.com/authorize?&client_id=f010187a-625c-474a-b9c5-461445989809&products=directory individual employment payment pay_statement&redirect_uri=https://cxiv.io/finch_tech_assessment_user_login.html&sandbox=true'
+
 })
   res.end();
 })
