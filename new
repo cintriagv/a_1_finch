@@ -1,0 +1,11 @@
+hey Tyler,
+
+below is a link to my github repository for the app in this technical assessment
+
+full transparency: it's not all there yet - the async nature of node-fetch (a nodejs module im using for server side network calls) is tripping me up in saving the values i am pulling from the Finch API - while i am able to call the Finch API from my application; i cannot yet surface Finch data to the client
+
+i will ensure this is set by the time we have our call next week though, so you will see updates made to the github repository linked below
+
+the readme.txt of the github has guidance on how to run my application locally, as well as the dependensies used in this project; but i have also hosted some content files to make the redirect experience smoother since the Finch Dashboard requires an "https" redirect, and i cannot point to some "file:///" location
+
+hope you had a good break and if you have any questions in the meantime, just let me know; chat soon
