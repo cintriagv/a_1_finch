@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+  height:100%;
+  background: #0071bc;
+}
+
+h1 {
+  color: #ffffff;
+  font-family: Calibri, sans-serif;
+}
+h2 {
+  color: #ffffff;
+  font-family: Calibri, sans-serif;
+}
+h3 {
+  color: #ffffff;
+  font-family: Calibri, sans-serif;
+}
+h4 {
+  color: #ffffff;
+  font-family: Calibri, sans-serif;
+}
+h5 {
+  color: #ffffff;
+  font-family: Calibri, sans-serif;
+}
+h6 {
+  color: #ffffff;
+  font-family: Calibri, sans-serif;
+}
+p {
+  color: #ffffff;
+  font-family: Calibri, sans-serif;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a, a:visited, a:hover, a:active {
+  color: #ffffff;
+  fill: #ffffff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+svg:hover {
+  filter: invert(21%) sepia(8%) saturate(3227%) hue-rotate(95deg) brightness(92%) contrast(85%);
+}
+
+.main_menu {
+  position: fixed;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* can be treated like a fallback */
+  /* background-color: #FF38B7;  */
+
+  /* will be "on top", if browser supports it */
+  /*background-image: linear-gradient(150deg, #FF38B7, 70%, #03b8d9);  */
+  /* these will reset other properties, like background-position, but it does know what you mean */ 
+  background: linear-gradient(170deg, #0071bc, 60%, #4aa564);
+
+}
+
+.begin {
+  position: fixed;
+  z-index: 0;
+  width: 20%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+
+.new {
+    position: fixed;
+    z-index: 0;
+    width: 5%;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+  .user_login_action {
+    position: fixed;
+    z-index: 0;
+    width: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+
+
+
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 10000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw {
+  animation: display-exit 1s linear;
+}
+
+@keyframes display-exit {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-erase {
+  animation: hide-exit 2s linear;
+}
+
+@keyframes hide-exit {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1;
+  }
+}
