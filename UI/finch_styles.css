@@ -83,7 +83,7 @@ svg:hover {
 .get_directory {
   position: fixed;
   z-index: 0;
-  width: 30%;
+  width: 20%;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -114,6 +114,8 @@ svg:hover {
       top: 70%;
       left: 30%;
       transform: translate(-50%, -50%);
+      color: #ffffff;
+      font-family: Calibri, sans-serif;
       }
 
 
@@ -127,6 +129,8 @@ svg:hover {
         top: 70%;
         left: 75%;
         transform: translate(-50%, -50%);
+        color: #ffffff;
+        font-family: Calibri, sans-serif;
         }
   
 
@@ -151,7 +155,7 @@ svg:hover {
   .user_login_action {
     position: fixed;
     z-index: 0;
-    width: 10%;
+    width: 8%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

@@ -81,7 +81,7 @@ api_finch('/employer/individual','POST',data)
     res.setHeader ('Access-Control-Allow-Origin', '*');
     res.setHeader ('Access-Control-Allow-Headers', '*');
     res.setHeader ('Content-Type', 'application/json');
-    res.json({"request_body":data,"response":response})
+    res.json(response)
     res.end();
   })
   
@@ -102,7 +102,7 @@ api_finch('/employer/employment','POST',data)
     res.setHeader ('Access-Control-Allow-Origin', '*');
     res.setHeader ('Access-Control-Allow-Headers', '*');
     res.setHeader ('Content-Type', 'application/json');
-    res.json({"request_body":data,"response":response})
+    res.json(response)
     res.end();
   })
   

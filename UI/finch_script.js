@@ -36,8 +36,20 @@ async function get_personal_employment_data (individual_id) {
     console.log("get_personal_employment_data JUST RAN! ID below")
     console.log(individual_id)
 
-    await api_smallco('default','POST','employer_individual',individual_id);
-    await api_smallco('default','POST','employer_employment',individual_id);
+    var individual = await api_smallco('default','POST','employer_individual',individual_id);
+    var employment = await api_smallco('default','POST','employer_employment',individual_id);
+
+    console.log("INDIVIDUAL BELOW")
+    console.log(individual.responses[0].body)
+
+    var individual_display = individual.responses[0].body.first_name + " " +
+    individual.responses[0].body.last_name + " | " + individual.responses[0].body.gender
+
+    var employment_display = employment.responses[0].body.first_name + " " +
+    employment.responses[0].body.last_name + " | " + employment.responses[0].body.title
+
+    document.getElementById("div_personal_data").innerHTML = individual_display;
+    document.getElementById("div_employment_data").innerHTML = employment_display;
 
 }
 
