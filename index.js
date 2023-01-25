@@ -10,7 +10,7 @@ var parameters = {
     base_URL:"https://api.tryfinch.com",
     base_URL_TOKEN:"https://api.tryfinch.com/auth/token",
     finch_api_version:"2020-09-17",
-    authorization:"Bearer c2cbb292-eeaa-4ce6-82eb-a4d8fe5e55d4",
+    authorization:"null",
     directory: "empty",
     token: "empty"
 };
@@ -37,7 +37,7 @@ app.post('/accept_code', (req, res) => {
     client_id:parameters.client_id,
     client_secret:parameters.client_secret,
     code:code,
-    redirect_uri: "https://example.com"
+    redirect_uri: "https://cxiv.io/finch_tech_assessment_user_login.html"
   }
 
   console.log("DATA FOR POST")
@@ -48,7 +48,7 @@ app.post('/accept_code', (req, res) => {
   res.setHeader ('Access-Control-Allow-Origin', '*');
   res.setHeader ('Access-Control-Allow-Headers', '*');
   res.setHeader ('Content-Type', 'application/json');
-  res.json({requestBody: req.body}) 
+  res.json({this_is_just_what_was_sent:{requestBody: req.body}}) 
   res.end();
 })
 
@@ -173,17 +173,16 @@ async function api_finch_TOKEN (resource,method,data) {
     'Content-Type': 'application/json',
   }
   
-  if (method === 'GET') {
-    body = null
-  }
-  else {
-    body = data
-  }
+  console.log("this is the body sent below")
+  console.log(data)
+  body = JSON.stringify(data)
 
   const data_resolve = await fetch(request_URL, {method: method, headers:headers, body:body})
   .then (data => data.json())
   .then (data => {
     data_r = data
+    console.log("RESPONSE BELOW")
+    console.log(data_r)
     return(data_r)
   })
   .catch((error) => {
