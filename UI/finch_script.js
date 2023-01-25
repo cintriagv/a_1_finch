@@ -13,7 +13,7 @@ window.onresize = dimension_update;
 let params = (new URL(document.location)).searchParams;
 let code = params.get('code');
 
-function array_elements_menu() { return ["begin","new","user_login_action"]; }
+function array_elements_menu() { return ["begin","new","user_login_action","get_directory"]; }
 function array_class() { return ["animate-draw","animate-erase","visible","hidden","fade-display", "fade-hide"]; }
 function object_api_smallco() { return {URL:"http://localhost:3000"};}
 function object_sizes() { return {
@@ -22,12 +22,23 @@ function object_sizes() { return {
 };
 }
 
+
+
 async function accept_code () {
-    
+
     console.log("OBJECT CODE BELOW BEING SENT TO SERVER")
     console.log(code)
     await api_smallco('default','POST','accept_code',code);
-    console.log("CODE BELOW SENT TO SERVER")
+}
+
+async function get_personal_employment_data (individual_id) {
+
+    console.log("get_personal_employment_data JUST RAN! ID below")
+    console.log(individual_id)
+
+    await api_smallco('default','POST','employer_individual',individual_id);
+    await api_smallco('default','POST','employer_employment',individual_id);
+
 }
 
 async function begin_auth () {
@@ -36,6 +47,39 @@ async function begin_auth () {
     console.log("BEGIN_AUTH_FUNCTION")
     console.log(redirect)
     window.location.replace(redirect)
+}
+
+async function get_directory () {
+    var directory = await api_smallco('default','GET','directory')
+    console.log("get directory")
+    directory = directory.individuals
+    console.log(directory)
+
+    var directory_length = directory.length
+
+    for (let i = 0; i < directory_length; i++) {
+
+        currPerson = directory[i] 
+
+        var fname = currPerson.first_name
+        var lname = currPerson.last_name
+        var active = currPerson.is_active
+        var department = currPerson.department.name
+        var individual_id = currPerson.id
+
+        if (currPerson.middle_name===null) {
+            var mname = ""
+        }
+        else {
+            var mname = currPerson.middle_name
+        }
+
+        document.getElementById("div_directory").innerHTML+=
+        "<div id='"+fname+
+        "_holder' class='holder'><span class='directory_span' onclick=get_personal_employment_data('"+
+        individual_id+"')>"+fname+" "+" "+mname+" "+lname+" | "+department+" || active? "+active+
+        "<br>CLICK FOR PERSONAL+EMPLOYMENT DATA<br></span></br></div>";
+      }
 }
 
 function close_server () {
@@ -70,8 +114,6 @@ async function api_smallco (URL, method, resource, data) {
       });
 
       return return_data
-    
-
 };
 
 

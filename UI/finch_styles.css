@@ -53,6 +53,16 @@ svg:hover {
   filter: invert(21%) sepia(8%) saturate(3227%) hue-rotate(95deg) brightness(92%) contrast(85%);
 }
 
+.directory_span{
+  cursor:pointer;
+  color: #ffffff;
+  font-family: Calibri, sans-serif;
+}
+
+.directory_span:hover {
+  filter: invert(21%) sepia(8%) saturate(3227%) hue-rotate(95deg) brightness(92%) contrast(85%);
+}
+
 .main_menu {
   position: fixed;
   z-index: 0;
@@ -68,6 +78,57 @@ svg:hover {
   background: linear-gradient(170deg, #0071bc, 60%, #4aa564);
 
 }
+
+
+.get_directory {
+  position: fixed;
+  z-index: 0;
+  width: 30%;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+
+
+  .list_directory {
+    position: fixed;
+    z-index: 0;
+    height: 30%;
+    width: 70%;
+    overflow-y:auto;
+    outline: 5px solid white;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+
+
+    .employment_data {
+      position: fixed;
+      z-index: 0;
+      height: 20%;
+      width: 40%;
+      overflow-y:auto;
+      outline: 5px solid white;
+      top: 70%;
+      left: 30%;
+      transform: translate(-50%, -50%);
+      }
+
+
+      .personal_data {
+        position: fixed;
+        z-index: 0;
+        height: 20%;
+        width: 40%;
+        overflow-y:auto;
+        outline: 5px solid white;
+        top: 70%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+        }
+  
 
 .begin {
   position: fixed;

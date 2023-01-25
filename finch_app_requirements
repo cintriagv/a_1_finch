@@ -1,0 +1,37 @@
+REQUIREMENTS:
+
+FINCH API SANDBOX LINK: https://finch-sandbox-se-interview.vercel.app/
+﻿
+Hi Chris, 
+
+I enjoyed our conversation today. Congratulations on making it to the Finch Solutions Engineer technical challenge. You will find the instructions and requirements for the challenge below. 
+
+If you can please have this completed by Friday, Jan. 20th. Life happens, so if for some reason you are unable to complete it by Friday, just let me know so we can work out another due date. 
+
+Let me know if you have any questions about what you are expected to build.
+
+Tyler
+
+---
+
+Instructions:
+
+    Create a web application in your favorite language that calls Finch’s Sandbox API to get an access token depending on which provider they choose (gusto, bamboohr, justworks, paychex_flex, or workday). 
+    Use the access token to get the employer’s full employee directory.
+    Upload your code to a public Github repository and send your interviewer (Tyler Nix) the link when you are done. Instructions on how to run your code locally would be helpful.
+    You can use Finch’s API documentation for help, but keep in mind that the API domain you will be using for this project is https://finch-sandbox-se-interview.vercel.app/.
+
+Requirements:
+
+    The requested access token should not be allowed to call the /company endpoint.
+    Your user interface should allow each individual employee to be selected and show the employee's personal and employment data.
+    Do not spend a long time building a beautiful user interface; simple is perfectly fine. However, you do need to display each field individually. You cannot simply display the JSON response via <pre>{JSON.stringify(<your-data>, null, 2}</pre> even though it is helpful initially for testing.
+    A custom error message should be displayed in your application when a provider does not implement a certain endpoint.
+
+Questions that will be asked during your presentation:
+
+    How does your application respond when the field returned by the provider is null?
+    How does your application respond when a provider does not implement an endpoint?
+    Where is your access token stored?
+    [bonus points] Did you find the XSS vulnerability in the /api/sandbox/create endpoint? - HAS TO DO WITHH ONE OF THE DATA BODY FIELDS ACCEPTING ANY VALUE/NOT VALIDATING ON SAVE
+
