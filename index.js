@@ -10,7 +10,7 @@ var parameters = {
     base_URL:"https://api.tryfinch.com",
     base_URL_TOKEN:"https://api.tryfinch.com/auth/token",
     finch_api_version:"2020-09-17",
-    authorization:"null",
+    authorization:"empty",
     directory: "empty",
     token: "empty"
 };
@@ -43,12 +43,36 @@ app.post('/accept_code', (req, res) => {
   console.log("DATA FOR POST")
   console.log(data)
 
-  api_finch_TOKEN('/auth/token','POST',data);
+  api_finch_TOKEN('/auth/token','POST',data)
+  .then((response) => {
+    console.log(response)
+    token = "Bearer "+response.access_token
+    parameters.authorization = token
+    console.log("WITHIN THEN POST ACCEPT CODE")
+    console.log(parameters.authorization)
+  })
+
+  console.log("OUTSIDE THEN POST ACCEPT CODE")
+  console.log(parameters.authorization)
 
   res.setHeader ('Access-Control-Allow-Origin', '*');
   res.setHeader ('Access-Control-Allow-Headers', '*');
   res.setHeader ('Content-Type', 'application/json');
   res.json({this_is_just_what_was_sent:{requestBody: req.body}}) 
+  res.end();
+})
+
+app.post('/test_code_saving', (req, res) => {
+  console.log("~~~~~~~~~~~~~~~~~~~~")
+  console.log("test_code_saving")
+
+  console.log("IN TEST CODE SAVING")
+  console.log(parameters.authorization)
+
+  res.setHeader ('Access-Control-Allow-Origin', '*');
+  res.setHeader ('Access-Control-Allow-Headers', '*');
+  res.setHeader ('Content-Type', 'application/json');
+  res.json({requestBody: parameters.authorization}) 
   res.end();
 })
 
@@ -173,16 +197,13 @@ async function api_finch_TOKEN (resource,method,data) {
     'Content-Type': 'application/json',
   }
   
-  console.log("this is the body sent below")
-  console.log(data)
+
   body = JSON.stringify(data)
 
   const data_resolve = await fetch(request_URL, {method: method, headers:headers, body:body})
   .then (data => data.json())
   .then (data => {
     data_r = data
-    console.log("RESPONSE BELOW")
-    console.log(data_r)
     return(data_r)
   })
   .catch((error) => {
