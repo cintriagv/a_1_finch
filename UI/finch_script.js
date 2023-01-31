@@ -13,11 +13,10 @@ window.onresize = dimension_update;
 let params = (new URL(document.location)).searchParams;
 let code = params.get('code');
 
-function array_elements_menu() { return ["begin","new","user_login_action","get_directory"]; }
 function array_class() { return ["animate-draw","animate-erase","visible","hidden","fade-display", "fade-hide"]; }
 function object_api_smallco() { return {URL:"http://localhost:3000"};}
 function object_sizes() { return {
-    wide:{detail:"passed_in_sizer",menu:"15%",exit:"3%"},
+    wide:{detail:"passed_in_sizer",menu:"20%",exit:"3%"},
     tall:{detail:"passed_in_sizer",menu:"20%",exit:"10%"}
 };
 }
@@ -59,6 +58,15 @@ async function begin_auth () {
     console.log("BEGIN_AUTH_FUNCTION")
     console.log(redirect)
     window.location.replace(redirect)
+}
+
+async function get_company_info () {
+    var error_display = await api_smallco('default','GET','company')
+    console.log("get_company_info")
+    console.log(error_display)
+    error_code = error_display.code
+    error_message = error_display.message
+    window.alert("ERROR: "+error_code+" ||| message: "+error_message+" ||| custom message: essentially your bearer token doesn't have access to the /company endpoint :)");
 }
 
 async function get_directory () {

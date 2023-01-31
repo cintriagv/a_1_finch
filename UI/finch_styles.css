@@ -83,22 +83,31 @@ svg:hover {
 .get_directory {
   position: fixed;
   z-index: 0;
-  width: 20%;
+  width: 40%;
   top: 20%;
-  left: 50%;
+  left: 30%;
   transform: translate(-50%, -50%);
   }
+
+  .get-company-fail {
+    position: fixed;
+    z-index: 0;
+    width: 20%;
+    top: 30%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    }
 
 
   .list_directory {
     position: fixed;
     z-index: 0;
     height: 30%;
-    width: 70%;
+    width: 50%;
     overflow-y:auto;
     outline: 5px solid white;
     top: 40%;
-    left: 50%;
+    left: 35%;
     transform: translate(-50%, -50%);
     }
 
@@ -138,10 +147,20 @@ svg:hover {
   position: fixed;
   z-index: 0;
   width: 20%;
-  top: 30%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   }
+
+
+  .powered-by-finch {
+    position: fixed;
+    z-index: 0;
+    width: 20%;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
 
 .new {
     position: fixed;

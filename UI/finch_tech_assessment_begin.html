@@ -15,26 +15,38 @@
 
         <div id="main" class="main_menu">
 
-    
-    <h1 style="text-align:center">Finch technical assesment</h1>
-    <h1 style="text-align:center">begin sign in by clicking the Finch logo below</h1>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <h3 style="text-align:center">the big x will shut down the server - DON'T click</h3>
+    <br><br><br>
+    <h1 style="text-align:center">welcome to the smallco app</h1>
+    <h1 style="text-align:center">to get started, we'll need to connect your HR system</h1>
+    <h3 style="text-align:center">(we'll only be accessing your directory, individual, employment, payment, and paystatement products **NOT** company)</h3>
 
-            <div id="begin" class="begin animate-draw">
+
+
+            <div id="begin" class="begin">
                 <svg id="begin"
                 width="100%"
                 height="100%"
                 onclick="begin_auth()"
                 version="1.1"
-                viewbox="0 0 90 30"
+                viewbox="0 -25 90 60"
                 style="cursor:pointer;"
                 xmlns="http://www.w3.org/2000/svg">
+                <style>
+                    .begin-text {
+                        font: 9px sans-serif;
+                        fill: #ffffff;
+                        font-weight: normal;
+                    }
+                </style>
+                <text x="0" y="-15" class="begin-text">
+                    click here to connect 
+                </text>
+                <text x="0" y="-7" class="begin-text">
+                    your HR system with: 
+                </text>
                     <g
-                    stroke="#ffffff"
-                    stroke-width="2"
-                    fill="none"
-                    stroke-dasharray="1"
+                    fill="#ffffff"
+                    stroke-dasharray="none"
                     >
                     <path
                     id="path_one"
@@ -64,40 +76,10 @@
                 </svg>
             </div>
 
-            <div id="new" class="new animate-draw">
-                <svg id="resources"
-                width="50%"
-                height="100%"
-                onclick="close_server()"
-                version="1.1"
-                viewbox="0 0 1000 1000"
-                style="cursor:pointer;"
-                xmlns="http://www.w3.org/2000/svg">
-                    <g
-                    stroke="#ffffff"
-                    stroke-width="40"
-                    fill="#ffffff"
-                    stroke-dasharray="1"
-                    >
-                        <path
-                        id="path_eight"
-                        pathLength="1"
-                        d="
-                        m100 100 L900 900z
-                        "
-                        />
-                        <path
-                        id="path_nin"
-                        pathLength="1"
-                        d="
-                        m900 100 L100 900z
-                        "
-                        />
-                    </g>
-
-                </svg>
-                
+            <div id="app-container">
             </div>
+
+
 
         </div>
     </body>

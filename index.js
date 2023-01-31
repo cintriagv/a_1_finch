@@ -90,6 +90,20 @@ api_finch('/employer/directory','GET','null')
   
 })
 
+app.get('/company', (req, res) => {
+  console.log("COMPANY_ran_value_below:")
+
+api_finch('/employer/company','GET','null')
+  .then((response) => {
+    res.setHeader ('Access-Control-Allow-Origin', '*');
+    res.setHeader ('Access-Control-Allow-Headers', '*');
+    res.setHeader ('Content-Type', 'application/json');
+    res.json(response)
+    res.end();
+  })
+  
+})
+
 app.post('/employer_individual', (req, res) => {
   console.log("employer_individual_ran_value_below:")
 
